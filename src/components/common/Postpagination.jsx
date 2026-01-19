@@ -17,7 +17,7 @@ const Postpagination = ({
 
   // const totalpages = Math.ceil(totalPosts / postsPerPage)
   const pages = Array.from({length:totalPages},(_,i)=>i+1)
-  console.log(totalPages);
+  // console.log(totalPages);
   
   return (
  <Pagination>
