@@ -14,7 +14,7 @@ const Postdetails = () => {
     (p)=> p.id === Number(id)
   );
 
-console.log(post);
+// console.log(post);
 
   
   

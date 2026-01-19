@@ -32,8 +32,8 @@ const Posts = () => {
   const indexOflastPost = currentPage * postsPrepage;
   const indexOffirstpost = indexOflastPost - postsPrepage;
   const currentPosts = filteredPosts.slice(indexOffirstpost, indexOflastPost);
-  console.log("filteredPosts:", filteredPosts);
-console.log("currentPosts:", currentPosts);
+//   console.log("filteredPosts:", filteredPosts);
+// console.log("currentPosts:", currentPosts);
 
   return (
     <div className="mt-4">

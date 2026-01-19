@@ -19,7 +19,7 @@ const Createpost = () => {
   const {register , handleSubmit , formState:{errors} , control , reset} =useForm(
     {
       resolver:zodResolver(postSchema),
-      defaultValues: {
+    defaultValues: {
     title: "",
     body: "",
     author: "1", 
