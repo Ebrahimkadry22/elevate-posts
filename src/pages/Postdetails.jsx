@@ -8,7 +8,7 @@ import { NavLink, useParams } from 'react-router-dom'
 
 const Postdetails = () => {
   const {id} = useParams()
-  const {posts , loading} = useContext(PostsContext)
+  const {posts } = useContext(PostsContext)
 
   const post = posts.find(
     (p)=> p.id === Number(id)
