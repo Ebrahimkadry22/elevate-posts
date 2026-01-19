@@ -1,5 +1,6 @@
 import { createContext, useReducer } from "react";
-import { initalState, postsReducer } from "./PostsReducer";
+import { initalState, postsReducer } from "./postsReducer";
+
 
 export const PostsContext = createContext(null);
 
