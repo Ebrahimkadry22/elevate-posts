@@ -81,4 +81,4 @@ const Postdetails = () => {
   )
 }
 
-export default Postdetails
+export default React.memo(Postdetails)

@@ -20,80 +20,92 @@ const Postpagination = ({
   // console.log(totalPages);
   
   return (
- <Pagination>
-      <PaginationContent>
-        {/* First */}
-        <PaginationItem>
-          <PaginationLink
-            onClick={() => dispatch({ type: "SET_PAGE", payload: 1 })}
-            className={currentPage === 1 ? "opacity-50 pointer-events-none" : ""}
-          >
-            <ChevronsLeft />
-          </PaginationLink>
-        </PaginationItem>
+<Pagination>
+  <PaginationContent className="flex flex-wrap items-center justify-center gap-1 sm:gap-2">
 
-        {/* Prev */}
-        <PaginationItem>
+    {/* First */}
+    <PaginationItem>
+      <PaginationLink
+        onClick={() => dispatch({ type: "SET_PAGE", payload: 1 })}
+        className={`p-2 sm:p-3 ${
+          currentPage === 1 ? "opacity-50 pointer-events-none" : ""
+        }`}
+      >
+        <ChevronsLeft size={18} />
+      </PaginationLink>
+    </PaginationItem>
+
+    {/* Prev */}
+    <PaginationItem>
+      <PaginationLink
+        onClick={() =>
+          dispatch({ type: "SET_PAGE", payload: currentPage - 1 })
+        }
+        className={`p-2 sm:p-3 ${
+          currentPage === 1 ? "opacity-50 pointer-events-none" : ""
+        }`}
+      >
+        <ChevronLeft size={16} />
+      </PaginationLink>
+    </PaginationItem>
+
+   
+    <div className="hidden gap-1 md:flex">
+      {pages.map((p) => (
+        <PaginationItem key={p}>
           <PaginationLink
             onClick={() =>
-              dispatch({ type: "SET_PAGE", payload: currentPage - 1 })
+              dispatch({ type: "SET_PAGE", payload: p })
             }
-            className={currentPage === 1 ? "opacity-50 pointer-events-none" : ""}
-          >
-            <ChevronLeft size={16} />
-          </PaginationLink>
-        </PaginationItem>
-
-        {/* Numbers */}
-        {pages.map((p) => (
-          <PaginationItem key={p}>
-            <PaginationLink
-              onClick={() =>
-                dispatch({ type: "SET_PAGE", payload: p })
-              }
-              isActive={currentPage === p}
-              className={`rounded-full cursor-pointer ${
-                currentPage === p ? "bg-blue-500 text-white" : ""
+            isActive={currentPage === p}
+            className={`w-9 h-9 flex items-center justify-center rounded-full text-sm
+              ${
+                currentPage === p
+                  ? "bg-blue-500 text-white"
+                  : "hover:bg-gray-100"
               }`}
-            >
-              {p}
-            </PaginationLink>
-          </PaginationItem>
-        ))}
-
-        {/* Next */}
-        <PaginationItem >
-          <PaginationLink
-            onClick={() =>
-              dispatch({ type: "SET_PAGE", payload: currentPage + 1 })
-            }
-            className={
-              currentPage === totalPages
-                ? "opacity-50 pointer-events-none"
-                : ""
-            }
           >
-            <ChevronRight size={16} />
+            {p}
           </PaginationLink>
         </PaginationItem>
+      ))}
+    </div>
 
-        {/* Last */}
-        <PaginationItem>
-          <PaginationLink
-            onClick={() =>
-              dispatch({ type: "SET_PAGE", payload: totalPages })
-            }
-            className={
-              currentPage === totalPages
-                ? "opacity-50 pointer-events-none"
-                : ""
-            }
-          >
-            <ChevronsRight />
-          </PaginationLink>
-        </PaginationItem>
-      </PaginationContent>
-    </Pagination>
+    {/* Next */}
+    <PaginationItem>
+      <PaginationLink
+        onClick={() =>
+          dispatch({ type: "SET_PAGE", payload: currentPage + 1 })
+        }
+        className={`p-2 sm:p-3 ${
+          currentPage === totalPages
+            ? "opacity-50 pointer-events-none"
+            : ""
+        }`}
+      >
+        <ChevronRight size={16} />
+      </PaginationLink>
+    </PaginationItem>
+
+    {/* Last */}
+    <PaginationItem>
+      <PaginationLink
+        onClick={() =>
+          dispatch({ type: "SET_PAGE", payload: totalPages })
+        }
+        className={`p-2 sm:p-3 ${
+          currentPage === totalPages
+            ? "opacity-50 pointer-events-none"
+            : ""
+        }`}
+      >
+        <ChevronsRight size={18} />
+      </PaginationLink>
+    </PaginationItem>
+
+  </PaginationContent>
+</Pagination>
+
   );
 };
 

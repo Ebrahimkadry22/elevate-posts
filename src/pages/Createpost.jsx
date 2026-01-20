@@ -147,4 +147,4 @@ const Createpost = () => {
   )
 }
 
-export default Createpost
+export default React.memo(Createpost)

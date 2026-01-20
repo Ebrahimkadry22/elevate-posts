@@ -6,12 +6,12 @@ const Header = () => {
       <Container>
         <div className="flex items-center p-4 text-white rounded-md bg-white/70 backdrop-blur-md ">
           {/* left */}
-          <div className="text-2xl font-bold ">
+          <div className="font-bold md:text-2xl ">
             <span>Elevate</span>
           </div>
           {/* right */}
           <div className="mx-auto">
-            <span className="text-xl font-semibold">
+            <span className="text-sm font-semibold md:text-xl">
               Frontend Advanced Bootcamp Task
             </span>
           </div>
